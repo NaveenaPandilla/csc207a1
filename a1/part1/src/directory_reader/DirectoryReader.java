@@ -25,8 +25,17 @@ public class DirectoryReader {
 			File file = fileChooser.getSelectedFile();
 			System.out.println(file);
 
-			// TODO: print the contents of the selected directory, one per
-			// line. Prefix each line with a hyphen and a space: "- ".
+			// TODO: print the contents of the selected directory, one per line. 
+		File[] allfiles = file.listFiles();
+		for(int i= 0; i < allfiles.length; i++){
+			if(allfiles[i].isDirectory()){
+				System.out.println("- "+allfiles[i].getName()+"/");
+			}
+			else{
+				System.out.println("- "+allfiles[i].getName());
+			}
+				
+		}
 		}
 	}
 }
